@@ -1,0 +1,96 @@
+<div id="tool-bottom" [style]="style">
+	<!-- picture section -->
+	<div class="col-lg-12 col-md-12 col-sm-12" [style]="pictureStyle">
+		<div class="col-lg-3 col-md-3 col-sm-3" style="padding-left: 0px;">
+			<div class="col-lg-2 col-md-2 col-sm-2" style="padding-left: 0px; padding-top: 6px; font-size:14px">Picture</div>
+			<div class="col-lg-10 col-md-10 col-sm-10"><input type="text" class="form-control" style="font-size:12px" placeholder="title" [(ngModel)]="title" (ngModelChange)="updateModel(false)"/></div>
+		</div>
+		<div class="col-lg-2 col-md-2 col-sm-2">
+			<input type="text" class="form-control" style="font-size:12px" placeholder="tag"/>
+		</div>
+		<div class="col-lg-1 col-md-1 col-sm-1">
+			<a class="btn btn-info" title="edit the picture" (click)="onPictureDetail()">Details</a>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6" style="padding-right: 0px">
+		    <a style="margin-top: 8px; float:right; font-size: 14px" (click)="hide()"><i class="fa fa-times"></i></a>
+		</div>
+	</div>
+	<!-- object section -->
+	<div class="col-lg-12 col-md-12 col-sm-12" [style]="objectStyle">
+		<div class="col-lg-3 col-md-3 col-sm-3" style="padding-left: 0px;">
+			<div class="col-lg-2 col-md-2 col-sm-2" style="padding-left: 0px; padding-top: 6px; font-size:14px">Object</div>
+			<div class="col-lg-10 col-md-10 col-sm-10"><input type="text" class="form-control" style="font-size:12px" placeholder="title" [(ngModel)]="title" (ngModelChange)="updateModel(false)"/></div>
+		</div>
+		<div class="col-lg-2 col-md-2 col-sm-2">
+			<input type="text" class="form-control" style="font-size:12px" placeholder="tag"/>
+		</div>
+		<div class="col-lg-1 col-md-1 col-sm-1">
+			<a class="btn btn-info" title="edit the picture" (click)="onObjectDetail()">Details</a>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6" style="padding-right: 0px">
+		    <a style="margin-top: 8px; float:right; font-size: 14px" (click)="hide()"><i class="fa fa-times"></i></a>
+		</div>
+	</div>
+	<!-- support section -->
+	<div class="col-lg-12 col-md-12 col-sm-12" [style]="supportStyle">
+		<div class="col-lg-10 col-md-10 col-sm-10" style="padding-left: 0px; font-size:14px">
+			<table><tr>
+				<td style="width: 60px">Picture</td>
+				<td style="width: 200px"><input type="text" class="form-control" style="font-size:12px" placeholder="title" [(ngModel)]="title" (ngModelChange)="updateModel(false)"/></td>
+				<td style="padding-left: 8px; padding-right: 8px"><a class="btn btn-info" title="edite the picture" (click)="onPictureSupportDetail()">Picture Details</a></td>
+				<td style="padding-right: 8px"><a class="btn btn-info" title="edit the support" (click)="onSupportDetail()">Support Details</a></td>
+				<td style="padding-right: 8px"><a type="button" class="btn btn-warning" title="focus on the picture" (click)="onSupportFocus()"><i class="fa fa-eye" style="font-size:10px"></i></a></td>
+			</tr></table>
+		</div>
+		<div class="col-lg-2 col-md-2 col-sm-2" style="padding-right: 0px">
+		    <a style="margin-top: 8px; float:right; font-size: 14px" (click)="hide()"><i class="fa fa-times"></i></a>
+		</div>
+	</div>
+	<!-- wall section -->
+	<div class="col-lg-12 col-md-12 col-sm-12" [style]="wallStyle">
+		<div class="col-lg-10 col-md-10 col-sm-10" style="padding-left: 0px; font-size:14px">
+			<table><tr>
+				<td style="width: 160px">Wall Placeholder Grid:</td>
+				<td style="padding-right: 8px">
+					<select class="form-control" (change)="gridSelectChange($event.target.value)">
+						<option *ngFor="let option of gridSelect.optionList" [value]="option.value" selected="{{option.selected}}" >{{option.label}}
+						</option>
+					</select>
+				</td>
+				<td style="padding-right: 8px"><a type="button" class="btn btn-warning" title="focus on the wall" (click)="onWallFocus()"><i class="fa fa-eye" style="font-size:10px"></i></a></td>
+			</tr></table>
+		</div>
+		<div class="col-lg-2 col-md-2 col-sm-2" style="padding-right: 0px">
+		    <a style="margin-top: 8px; float:right; font-size: 14px" (click)="hide()"><i class="fa fa-times"></i></a>
+		</div>
+	</div>
+	<!-- process section -->
+	<div class="col-lg-12 col-md-12 col-sm-12" [style]="processStyle">
+		<div class="col-lg-10 col-md-10 col-sm-10" style="padding-left: 0px; font-size:14px">
+			<table><tr>
+				<td style="width: 60px">Scene:</td>
+				<td style="padding-right: 8px">
+					<select class="form-control" (change)="sceneSelectChange($event.target.value)">
+						<option *ngFor="let scene of sceneSelect.optionList" [value]="scene.value" selected="{{scene.selected}}" >{{scene.label}}
+						</option>
+					</select>
+				</td>
+				<td style="width: 90px"><input type="checkbox" [(ngModel)]="activeScene" />&nbsp;&nbsp;Active&nbsp;&nbsp;&nbsp;&nbsp;|</td>
+				<td style="width: 80px; padding-left: 16px; padding-top: 4px">Param:</td>
+				<td style="padding-right: 8px">
+					<select class="form-control" (change)="paramSelectChange($event.target.value)">
+						<option *ngFor="let param of paramSelect.optionList" [value]="param.value" selected="{{param.selected}}" >{{param.label}}
+						</option>
+					</select>
+				</td>
+				<td style="width: 80px"><input type="checkbox" [(ngModel)]="activeParam" />&nbsp;&nbsp;Active</td>
+				<td style="width: 300px"><input type="text" class="form-control" style="font-size:12px" placeholder="value" [(ngModel)]="paramValue"/>
+				<td style="padding-left: 16px; padding-right: 8px"><a class="btn btn-info" title="scene write" (click)="onWrite()">write</a></td>
+				<td style="padding-right: 8px"><a class="btn btn-info" title="process persist" (click)="onPersist()">persist</a></td>
+			</tr></table>
+		</div>
+		<div class="col-lg-2 col-md-2 col-sm-2" style="padding-right: 0px">
+		    <a style="margin-top: 8px; float:right; font-size: 14px" (click)="hide()"><i class="fa fa-times"></i></a>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,96 @@
+<div [style]="style">
+<div id="assetManager" class="modal fade modeless" style="overflow: hidden;" cdkDrag>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="height:26px; padding-top:4px" cdkDragHandle>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" (click)="close()">&times;</button>
+                <h4 class="modal-title" style="font-size: 14px;">Assets</h4>
+            </div>
+            <div class="modal-body" style="height:320px; padding-top:6px">
+				<div class="col-lg-12 col-md-12 col-sm-12" style="padding-left: 0px; padding-right: 0px; padding-bottom:6px">
+					<table width="100%" style="color: #999"><tr>
+						<td width="120px"><input type="text" class="form-control" style="width:110px; font-size:12px" placeholder="tag filter"></td>
+						<td width="120px">
+							<div class="radio" style="font-size: 13px">
+				                <label>
+				                  <input type="radio" name="source" id="user" value="user" checked>
+				                  My Assets
+				                  </label>
+				            </div>
+						</td>
+						<td width="200px">
+				            <div class="radio" style="font-size: 13px">
+				                <label>
+				                  <input type="radio" name="source" id="library" value="library">
+				                  Library Assets
+				                  </label>
+				            </div>
+						</td>
+						<td width="100px"><a class="btn btn-info" data-toggle="modal" data-target="#uploader" (click)="onUploader()" style="font-size: 14px"><i class="fa fa-upload"></i>&nbsp;&nbsp;Upload</a></td>
+					</tr></table>
+			  	</div>
+				<div class="col-sm-2 col-md-2 col-lg-2" style="padding-left:0px; color: #999; font-size: 13px">
+					<div class="radio" style="padding-top:6px">
+		                <label>
+		                  <input type="radio" name="type" id="picture" value="picture" (click)="updateTypeFilter('picture')" checked>
+		                  Picture
+		                  </label>
+		            </div>
+					<div class="radio" style="padding-top:6px">
+		                <label>
+		                  <input type="radio" name="type" id="object" value="object" (click)="updateTypeFilter('object')">
+		                  Object
+		                  </label>
+		            </div>
+					<div class="radio" style="padding-top:6px">
+		                <label>
+		                  <input type="radio" name="type" id="video" value="video" (click)="updateTypeFilter('video')">
+		                  Video
+		                  </label>
+		            </div>
+					<div class="radio" style="padding-top:6px">
+		                <label>
+		                  <input type="radio" name="type" id="sound" value="sound" (click)="updateTypeFilter('sound')">
+		                  Sound
+		                  </label>
+		            </div>
+					<div class="radio" style="padding-top:6px">
+		                <label>
+		                  <input type="radio" name="type" id="texture" value="texture" (click)="updateTypeFilter('texture')">
+		                  Texture
+		                  </label>
+		            </div>
+					<div class="radio" style="padding-top:6px">
+		                <label>
+		                  <input type="radio" name="type" id="material" value="material" (click)="updateTypeFilter('material')">
+		                  Material
+		                  </label>
+		            </div>
+			   </div>
+			   <div class="col-sm-10 col-md-10 col-lg-10 assetThumbContainer">
+				  	<div *ngFor="let creation of visibleCreationList; let i = index" class="col-sm-4 col-md-4 col-lg-4" style="padding:0px;">
+						<div [ngClass]="{'thumb-selected' : i == selected}">
+					     	<div class="thumb-container">
+								<div class="asset-thumb" [ngStyle]="{'background-image': 'url('+ creation.getThumbUrl() +')'}" (mousedown)="selectCurrent(creation, i)" alt=""
+									draggable="true" (dragstart)="assetDrag($event)" style="cursor: pointer"></div>
+								<div *ngIf="creation.getType() != 'texture'" class="thumb-edit">
+								   <a class="btn btn-round btn-default" style="font-size: 10px"><i class="fa fa-pencil" title="edit the asset" (click)="creationDetail(creation, i)"></i></a>
+								</div>
+							</div>
+						</div>
+				    </div>
+				 	<div *ngFor="let scene of visibleMaterialList; let i = index" class="col-sm-3 col-md-3 col-lg-3" style="padding:3px;">
+						<div [ngClass]="{'thumb-selected' : i == selectedMaterial}">
+							<img class="img-responsive" src="{{getMaterialThumbUrl(scene)}}" (mousedown)="selectMaterial(scene, i)" alt="" 
+								draggable="true" (dragstart)="assetDrag($event)" style="cursor: pointer">
+						</div>
+				 		<div class="col-lg-12 col-md-12 col-sm-12" style="padding:0px; font-size: 12px">{{scene.name}}</div>
+			   		</div>
+               </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+</div>

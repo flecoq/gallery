@@ -1,0 +1,504 @@
+{
+   "id" : "template-room",
+   "Process" : [ {
+      "id" : "template-room",
+      "type" : "3d",
+      "Scene" : [ {
+         "type" : "camera",
+         "create" : "universal",
+         "name" : "basic-camera",
+         "Param" : [ {
+            "name" : "pos",
+            "value" : "3.5;1;3.5"
+         }, {
+            "name" : "target",
+            "value" : "3.5;1;5.5"
+         }, {
+            "name" : "fov",
+            "value" : "60"
+         }, {
+            "name" : "speed",
+            "value" : "0.15"
+         }, {
+            "name" : "inertia",
+            "value" : "0.9"
+         }, {
+            "name" : "angularSensibility",
+            "value" : "3000"
+         }, {
+            "name" : "current",
+            "value" : "true"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "skybox",
+         "name" : "basic-skybox",
+         "Param" : [ {
+            "name" : "texture.url",
+            "value" : "./assets/environment/country.env"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "hemisphericLight",
+         "name" : "hemishpericLight",
+         "active" : "true",
+         "Param" : [ {
+            "name" : "direction",
+            "value" : "0;1;0"
+         }, {
+            "name" : "diffuse",
+            "value" : "1;1;1"
+         }, {
+            "name" : "intensity",
+            "value" : "1.0"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "pointLight",
+         "name" : "pointLight",
+         "active" : "true",
+         "Param" : [ {
+            "name" : "pos",
+            "value" : "7;5;3.5"
+         }, {
+            "name" : "direction",
+            "value" : "-1;1;0"
+         }, {
+            "name" : "intensity",
+            "value" : "0.3"
+         }, {
+            "name" : "diffuse",
+            "value" : "1;1;1"
+         }, {
+            "name" : "shadow",
+            "value" : "true"
+         }, {
+            "name" : "useBlurExponentialShadowMap",
+            "value" : "true"
+         }, {
+            "name" : "useKernelBlur",
+            "value" : "true"
+         }, {
+            "name" : "blurKernel",
+            "value" : "128"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "floor",
+         "name" : "basic-floor",
+         "Param" : [ {
+            "name" : "dimension",
+            "value" : "7;0.4;7"
+         }, {
+            "name" : "material.diffuseMap.url",
+            "value" : "./assets/textures/substance_2.jpg"
+         }, {
+            "name" : "shadow.receive",
+            "value" : "true"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "wall",
+         "name" : "basic-wall",
+         "Param" : [ {
+            "name" : "dimension",
+            "value" : "0.2;3;7"
+         }, {
+            "name" : "placeholder.grid",
+            "value" : "2;1"
+         }, {
+            "name" : "material.diffuseColor",
+            "value" : "1.0;0.1;0.1"
+         } ]
+      }, {
+         "type" : "merge",
+         "name" : "merge-clock",
+         "active" : "true",
+         "Param" : [ {
+            "name" : "url",
+            "value" : "./assets/import/clock/"
+         }, {
+            "name" : "filename",
+            "value" : "scene.gltf"
+         }, {
+            "name" : "pos",
+            "value" : "3.5;0;5.5"
+         }, {
+            "name" : "scale",
+            "value" : "0.3;0.3;0.3"
+         }, {
+            "name" : "rot",
+            "value" : "0;180;0"
+         }, {
+            "name" : "shadow",
+            "value" : "true"
+         } ]
+      }, {
+         "type" : "merge",
+         "name" : "merge-chair",
+         "active" : "true",
+         "Param" : [ {
+            "name" : "url",
+            "value" : "./assets/import/3ds/chair/"
+         }, {
+            "name" : "filename",
+            "value" : "Chair.obj"
+         }, {
+            "name" : "pos",
+            "value" : "3.5;0;3.5"
+         }, {
+            "name" : "scale",
+            "value" : "0.002;0.002;0.002"
+         }, {
+            "name" : "rot",
+            "value" : "0;30;0"
+         }, {
+            "name" : "shadow",
+            "value" : "true"
+         } ]
+      }, {
+         "type" : "render",
+         "name" : "basic-render",
+         "Param" : [ {
+            "name" : "samples",
+            "active" : "false",
+            "value" : "1"
+         }, {
+            "name" : "fxaa.enabled",
+            "active" : "false",
+            "value" : "true"
+         }, {
+            "name" : "toneMapping.enabled",
+            "active" : "false",
+            "value" : "true"
+         }, {
+            "name" : "contrast",
+            "active" : "false",
+            "value" : "2.0"
+         }, {
+            "name" : "exposure",
+            "active" : "false",
+            "value" : "1.5"
+         }, {
+            "name" : "colorCurves.enabled",
+            "active" : "false",
+            "value" : "true"
+         }, {
+            "name" : "curve.globalDensity",
+            "active" : "false",
+            "value" : "0"
+         }, {
+            "name" : "curve.globalExposure",
+            "active" : "false",
+            "value" : "0"
+         }, {
+            "name" : "curve.globalHue",
+            "active" : "false",
+            "value" : "0"
+         }, {
+            "name" : "curve.globalSaturation",
+            "active" : "false",
+            "value" : "0"
+         }, {
+            "name" : "curve.highlightsDensity",
+            "active" : "false",
+            "value" : "0"
+         }, {
+            "name" : "curve.highlightsExposure",
+            "active" : "false",
+            "value" : "0"
+         }, {
+            "name" : "curve.highlightsHue",
+            "active" : "false",
+            "value" : "0"
+         }, {
+            "name" : "curve.highlightsSaturation",
+            "active" : "false",
+            "value" : "0"
+         }, {
+            "name" : "curve.midtonesDensity",
+            "active" : "false",
+            "value" : "0"
+         }, {
+            "name" : "curve.midtonesExposure",
+            "active" : "false",
+            "value" : "0"
+         }, {
+            "name" : "curve.midtonesHue",
+            "active" : "false",
+            "value" : "0"
+         }, {
+            "name" : "curve.midtonesSaturation",
+            "active" : "false",
+            "value" : "0"
+         }, {
+            "name" : "curve.shadowsDensity",
+            "active" : "false",
+            "value" : "0"
+         }, {
+            "name" : "curve.shadowsExposure",
+            "active" : "false",
+            "value" : "0"
+         }, {
+            "name" : "curve.shadowsHue",
+            "active" : "false",
+            "value" : "0"
+         }, {
+            "name" : "curve.shadowsSaturation",
+            "active" : "false",
+            "value" : "0"
+         }, {
+            "name" : "bloom.enabled",
+            "active" : "false",
+            "value" : "true"
+         }, {
+            "name" : "bloomKernel",
+            "active" : "false",
+            "value" : "250"
+         }, {
+            "name" : "bloomWeight",
+            "active" : "false",
+            "value" : "0.5"
+         }, {
+            "name" : "bloomThreshold",
+            "active" : "false",
+            "value" : "0.5"
+         }, {
+            "name" : "bloomScale",
+            "active" : "false",
+            "value" : "0.5"
+         }, {
+            "name" : "depthOfField.enabled",
+            "active" : "false",
+            "value" : "true"
+         }, {
+            "name" : "blurLevel",
+            "active" : "false",
+            "value" : "2"
+         }, {
+            "name" : "focusDistance",
+            "active" : "false",
+            "value" : "10"
+         }, {
+            "name" : "fStop",
+            "active" : "false",
+            "value" : "5"
+         }, {
+            "name" : "focalLength",
+            "active" : "false",
+            "value" : "100"
+         }, {
+            "name" : "chromaticAberration.enabled",
+            "active" : "false",
+            "value" : "true"
+         }, {
+            "name" : "chromaticAberration.amount",
+            "active" : "false",
+            "value" : "500"
+         }, {
+            "name" : "chromaticAberration.radialIntensity",
+            "active" : "false",
+            "value" : "2.0"
+         }, {
+            "name" : "sharpen.enabled",
+            "active" : "false",
+            "value" : "true"
+         }, {
+            "name" : "sharpen.edgeAmount",
+            "active" : "false",
+            "value" : "1.0"
+         }, {
+            "name" : "sharpen.colorAmount",
+            "active" : "false",
+            "value" : "0.5"
+         }, {
+            "name" : "grain.enabled",
+            "active" : "false",
+            "value" : "true"
+         }, {
+            "name" : "grain.intensity",
+            "active" : "false",
+            "value" : "50"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "plane",
+         "name" : "flat-support",
+         "Param" : [ {
+            "name" : "title",
+            "value" : "Flat"
+         }, {
+            "name" : "thumbIndex",
+            "value" : "1"
+         }, {
+            "name" : "scale",
+            "value" : "1.0;1.0;1.0"
+         }, {
+            "name" : "asset",
+            "value" : "port01"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "picture",
+         "name" : "basic-support",
+         "Param" : [ {
+            "name" : "title",
+            "value" : "support 1"
+         }, {
+            "name" : "thumbIndex",
+            "value" : "1"
+         }, {
+            "name" : "scale",
+            "value" : "0.1;1.0;1.0"
+         }, {
+            "name" : "border.size",
+            "value" : "0.1"
+         }, {
+            "name" : "material.diffuseColor",
+            "value" : "1.0;0.5;0.5"
+         }, {
+            "name" : "asset",
+            "value" : "port01"
+         } ]
+      }, {
+            "type" : "object",
+			"create" : "composite",
+			"name" : "basic-composite",
+            "Param" : [ {
+				"name" : "pos",
+				"value" : "0;0;0"
+			 }, {
+				"name" : "local.scale",
+				"value" : "0.1;3.0;7.0"
+            } ]
+      }, {
+            "type" : "object",
+            "create" : "box",
+			"name" : "child-box",
+            "Param" : [ {
+               "name" : "pos",
+               "value" : "0;0;0"
+            } ]
+      }, {
+            "type" : "object",
+            "create" : "box",
+			"name" : "child-box-fill",
+            "Param" : [ {
+               "name" : "pattern",
+               "value" : "fill"
+            }, {
+               "name" : "ori",
+               "value" : "1"
+            } ]
+      }, {
+            "type" : "object",
+            "create" : "box",
+			"name" : "child-box-border",
+            "Param" : [ {
+               "name" : "pattern",
+               "value" : "border"
+            }, {
+               "name" : "pos",
+               "value" : "0;0;0"
+            } ]
+      }, {
+            "type" : "object",
+            "create" : "merge",
+			"name" : "child-merge",
+            "Param" : [ {
+               "name" : "pos",
+               "value" : "0;0;0"
+            } ]
+      }, {
+            "type" : "extrude",
+            "create" : "merge",
+			"name" : "child-extrude",
+            "Param" : [ {
+               "name" : "pos",
+               "value" : "0;0;0"
+            } ]
+      }, {
+            "type" : "object",
+            "create" : "cylinder",
+			"name" : "child-cylinder",
+            "Param" : [ {
+               "name" : "pos",
+               "value" : "0;0;0"
+            } ]
+      }, {
+            "type" : "object",
+            "create" : "cylinder",
+			"name" : "child-cylinder-bar",
+            "Param" : [ {
+               "name" : "pattern",
+               "value" : "bar"
+			 }, {
+               "name" : "begin",
+               "value" : "0;0;0"
+			 }, {
+               "name" : "end",
+               "value" : "0;0;0"
+            } ]
+      }, {
+            "type" : "object",
+            "create" : "sphere",
+			"name" : "child-sphere",
+            "Param" : [ {
+               "name" : "pos",
+               "value" : "0;0;0"
+            } ]
+      }, {
+            "type" : "object",
+            "create" : "plane",
+			"name" : "child-plane",
+            "Param" : [ {
+               "name" : "pos",
+               "value" : "0;0;0"
+            } ]
+      }, {
+            "type" : "object",
+            "create" : "asset",
+			"name" : "child-asset",
+            "Param" : [ {
+               "name" : "pos",
+               "value" : "0;0;0"
+            } ]
+       }, {
+         "type" : "object",
+         "create" : "composite",
+         "name" : "frame",
+         "Param" : [ {
+            "name" : "pos",
+            "value" : "0;0;0"
+         }, {
+            "name" : "local.scale",
+            "value" : "0.05;2;2"
+         } ],
+         "Scene" : [ {
+            "type" : "object",
+            "create" : "box",
+            "Param" : [ {
+               "name" : "pattern",
+               "value" : "fill"
+            }, {
+               "name" : "ori",
+               "value" : "1"
+            } ]
+         }, {
+            "type" : "object",
+            "create" : "asset",
+            "Param" : [ {
+               "name" : "asset",
+               "value" : "port01"
+            }, {
+               "name" : "margin",
+               "value" : "0.1"
+            }, {
+               "name" : "pos.x",
+               "value" : "$scaleX*1.1"
+            } ]
+         } ]
+      } ],
+      "Exec" : [ ]
+   } ]
+}

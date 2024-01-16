@@ -1,0 +1,264 @@
+/* general */
+
+body {
+  background: #fff;
+  color: #666;
+  font-size: 14px;
+}
+
+a {
+  color: #ccc;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.info {
+  width:100%;
+  padding:12px;
+  box-sizing: border-box;
+}
+
+.btn-area {
+display : block;
+  width:80px;
+  height:40px;
+}
+
+
+/* menubar */
+
+#menubar {
+	position: absolute;
+	background-color: #212121;
+	height: 50px;
+	width: 100%;
+	display: flex;
+}
+
+
+/* tool */
+
+#tool-left {
+	position: absolute;
+	background-color: #212121;
+	top: 50px;
+	bottom: 0px;
+	width: 50px;
+	padding-left: 4px;
+	font-size: 12px;
+	display: block;
+}
+
+#monitor {
+	position: absolute;
+	color: white;
+	top: 70px;
+	left: 70px;
+	width: 250px;
+	height: 100px;
+	padding-left: 4px;
+	font-size: 12px;
+	display: block;
+}
+
+#tool-camera {
+	position: absolute;
+	bottom: 0px;
+	width: 50px;
+	height: 50px;
+	padding-left: 4px;
+	font-size: 12px;
+	display: block;
+}
+
+#tool-bottom {
+	position: absolute;
+	background-color: #212121;
+	left: 50px;
+	bottom: 0px;
+	right: 0px;
+	height: 50px;
+	padding-left: 4px;
+	padding-top: 8px;
+	font-size: 12px;
+	display: block;
+}
+
+#material-selector {
+	position: absolute;
+	background-color: #212121;
+	left: 50px;
+	bottom: 0px;
+	right: 500px;
+	height: 200px;
+	padding-left: 4px;
+	padding-top: 8px;
+	font-size: 12px;
+	display: block;
+	visibility: hidden;
+}
+
+#picture-detail {
+	position: absolute;
+	background-color: #444;
+	left: 50px;
+	top: 50px;
+	right: 0px;
+	bottom: 0px;
+	display: flex;
+	visibility: hidden;
+}
+
+#object-detail {
+	position: absolute;
+	background-color: #212121;
+	top: 50px;
+	bottom: 0px;
+	right:0px;
+	width: 500px;
+	padding-left: 4px;
+	font-size: 12px;
+	display: block;
+	visibility: hidden;
+}
+
+#support-list {
+	position: absolute;
+	background-color: #212121;
+	top: 50px;
+	bottom: 0px;
+	right:0px;
+	width: 120px;
+	padding-left: 4px;
+	font-size: 12px;
+	display: block;
+	visibility: hidden;
+}
+
+/* picture details */
+
+.img-center {
+    background: center center no-repeat;
+    background-size: contain;
+    height: 600px;
+    width: 600px;
+    margin: auto;
+    position: relative;	
+}
+
+
+/* asset support */
+
+.support-container {
+  position: relative;
+  margin:10px;
+  right:0px;
+  background-color: #aaa; 
+  height:80px; 
+  width:80px
+}
+
+.support-edit {
+  position: absolute;
+  bottom: 12px;
+  right: 18px;
+  height: 20px;
+  width: 20px;
+  opacity: 0;
+  transition: .3s ease;
+}
+
+.support-container:hover .support-edit {
+  opacity: 1;
+}
+
+
+/* asset manager */
+
+.assetThumbContainer {
+	height:250px; 
+	padding-top:4px;
+	overflow: auto;
+}
+
+.asset-thumb {
+    background: center center no-repeat;
+    background-size: contain;
+	border: 1px solid #ddd;
+    height: 120px;
+    width: 120px;
+    margin: 6px;
+    position: relative;	
+}
+
+.thumb-container {
+  position: relative;
+  padding:4px;
+  width: 100%;
+}
+
+.thumb-selected {
+	background-color: #00abde;
+}
+
+.support-selected {
+	width: 100%;
+	height: 100%;
+	border: 5px solid #00abde;
+}
+
+.thumb-edit {
+  position: absolute;
+  bottom: 6px;
+  right: 10px;
+  height: 30px;
+  width: 30px;
+  opacity: 0;
+  transition: .3s ease;
+}
+
+
+.thumb-container:hover .thumb-edit {
+  opacity: 1;
+}
+
+/* drop box */
+
+.drop-box {
+	background-color: #eee;
+	border-style: dashed; 
+	border-color: #aaa; 
+	padding: 20px; 
+}
+
+.drop-box:hover {
+	background-color: #faebcc;
+}
+
+
+/* home */
+
+.room-thumb-container {
+  position: relative;
+  display:inline-block;
+  padding:4px;
+  width: 100%;
+}
+
+.room-edit {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  height: 30px;
+  width: 60px;
+  opacity: 0;
+  transition: .3s ease;
+}
+
+.room-thumb-container:hover .room-edit {
+  opacity: 1;
+}

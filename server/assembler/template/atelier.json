@@ -1,0 +1,691 @@
+{
+   "Process" : [ {
+      "id" : "atelier-room",
+      "type" : "3d",
+      "Scene" : [ {
+         "type" : "object",
+         "create" : "hemisphericLight",
+         "name" : "lightDown",
+         "active" : "true",
+         "Param" : [ {
+            "name" : "direction",
+            "value" : "0;10;0"
+         }, {
+            "name" : "diffuse",
+            "value" : "1;1;1"
+         }, {
+            "name" : "specular",
+            "value" : "0;0;0"
+         }, {
+            "name" : "intensity",
+            "value" : "0.75"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "hemisphericLight",
+         "name" : "lightUp",
+         "active" : "true",
+         "Param" : [ {
+            "name" : "direction",
+            "value" : "0;-10;0"
+         }, {
+            "name" : "diffuse",
+            "value" : "1;1;1"
+         }, {
+            "name" : "specular",
+            "value" : "0;0;0"
+         }, {
+            "name" : "intensity",
+            "value" : "0.55"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "pointLight",
+         "name" : "pointLight",
+         "active" : "true",
+         "Param" : [ {
+            "name" : "pos",
+            "value" : "6;3.5;3.0"
+         }, {
+            "name" : "direction",
+            "value" : "0;1;0"
+         }, {
+            "name" : "intensity",
+            "value" : "0.2"
+         }, {
+            "name" : "diffuse",
+            "value" : "1;1;1"
+         }, {
+            "name" : "shadow",
+            "value" : "true"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "skybox",
+         "name" : "skybox",
+         "active" : "true",
+         "Param" : [ {
+            "name" : "texture.url",
+            "value" : "./assets/environment/country.env"
+         } ]
+      }, {
+         "type" : "render",
+         "Param" : [ {
+            "name" : "contrast",
+            "value" : "1.0"
+         }, {
+            "name" : "exposure",
+            "value" : "1.0"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "floor",
+         "name" : "floor",
+         "Param" : [ {
+            "name" : "dimension",
+            "value" : "12.0;0.2;6.0"
+         }, {
+            "name" : "reference",
+            "value" : "material.wood"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "wall",
+         "name" : "wallLeft",
+         "Param" : [ {
+            "name" : "dimension",
+            "value" : "0.2;2.5;6.0"
+         }, {
+            "name" : "material.diffuseColor",
+            "value" : "0.27;0.29;0.34"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "composite",
+         "name" : "wallLeft-upper",
+         "Param" : [ {
+            "name" : "pos.y",
+            "value" : "2.625"
+         }, {
+            "name" : "local.scale",
+            "value" : "0.12;2.0;6.0"
+         }, {
+            "name" : "local.pos",
+            "value" : "vector(0, 0, $scaleZ/2)"
+         } ],
+         "Scene" : [ {
+            "type" : "object",
+            "create" : "box",
+            "Param" : [ {
+               "name" : "pattern",
+               "value" : "bar"
+            }, {
+               "name" : "begin",
+               "value" : "vector(0.06,0,-$scaleZ/2)"
+            }, {
+               "name" : "end",
+               "value" : "vector(0.06,0,$scaleZ/2))"
+            }, {
+               "name" : "section",
+               "value" : "0.12;0.25"
+            } ]
+         }, {
+            "type" : "object",
+            "create" : "box",
+            "Param" : [ {
+               "name" : "pattern",
+               "value" : "bar"
+            }, {
+               "name" : "begin",
+               "value" : "vector(0.05,0,-$scaleZ/2)"
+            }, {
+               "name" : "end",
+               "value" : "vector(0.05,$scaleY,0))"
+            }, {
+               "name" : "section",
+               "value" : "0.10;0.20"
+            } ]
+         }, {
+            "type" : "object",
+            "create" : "box",
+            "Param" : [ {
+               "name" : "pattern",
+               "value" : "bar"
+            }, {
+               "name" : "begin",
+               "value" : "vector(0.05,-0.8,-$scaleZ/2)"
+            }, {
+               "name" : "end",
+               "value" : "vector(0.05,$scaleY/2+0.20,-$scaleZ/4+0.15))"
+            }, {
+               "name" : "section",
+               "value" : "0.10;0.16"
+            } ]
+         }, {
+            "type" : "object",
+            "create" : "box",
+            "Param" : [ {
+               "name" : "pattern",
+               "value" : "bar"
+            }, {
+               "name" : "begin",
+               "value" : "vector(0.05,-0.8,$scaleZ/2)"
+            }, {
+               "name" : "end",
+               "value" : "vector(0.05,$scaleY/2+0.20,$scaleZ/4-0.15))"
+            }, {
+               "name" : "section",
+               "value" : "0.10;0.16"
+            } ]
+         }, {
+            "type" : "object",
+            "create" : "box",
+            "Param" : [ {
+               "name" : "pattern",
+               "value" : "bar"
+            }, {
+               "name" : "begin",
+               "value" : "vector(0.05,0,$scaleZ/2)"
+            }, {
+               "name" : "end",
+               "value" : "vector(0.05,$scaleY,0))"
+            }, {
+               "name" : "section",
+               "value" : "0.10;0.20"
+            } ]
+         }, {
+            "type" : "object",
+            "create" : "box",
+            "Param" : [ {
+               "name" : "pattern",
+               "value" : "bar"
+            }, {
+               "name" : "begin",
+               "value" : "vector(0.06,0,0)"
+            }, {
+               "name" : "end",
+               "value" : "vector(0.06,$scaleY+0.30,0))"
+            }, {
+               "name" : "section",
+               "value" : "0.12;0.16"
+            } ]
+         }, {
+            "type" : "object",
+            "create" : "box",
+            "Param" : [ {
+               "name" : "pattern",
+               "value" : "bar"
+            }, {
+               "name" : "begin",
+               "value" : "vector(0.05,$scaleY/2,-$scaleZ/4)"
+            }, {
+               "name" : "end",
+               "value" : "vector(0.05,0,0))"
+            }, {
+               "name" : "section",
+               "value" : "0.10;0.20"
+            } ]
+         }, {
+            "type" : "object",
+            "create" : "box",
+            "Param" : [ {
+               "name" : "pattern",
+               "value" : "bar"
+            }, {
+               "name" : "begin",
+               "value" : "vector(0.05,$scaleY/2,$scaleZ/4)"
+            }, {
+               "name" : "end",
+               "value" : "vector(0.05,0,0))"
+            }, {
+               "name" : "section",
+               "value" : "0.10;0.20"
+            } ]
+         }, {
+            "type" : "object",
+            "create" : "extrude",
+            "Param" : [ {
+               "name" : "pos.x",
+               "value" : "-0.1"
+            }, {
+               "name" : "thickness",
+               "value" : "0.1"
+            }, {
+               "name" : "material.diffuseMap.url",
+               "value" : "./assets/textures/woodbar/basecolor.jpg"
+            } ],
+            "Path" : [ {
+               "name" : "shape",
+               "id" : 0,
+               "Param" : [ {
+                  "name" : "transform.value",
+                  "value" : "x;-z;y"
+               } ],
+               "Point" : [ "vector(-$scaleZ/2, 0 ,0)", "vector(-$scaleZ/2, 0.275, 0)", "vector(0, 2.275, 0)", "vector($scaleZ/2, 0.275, 0)", "vector($scaleZ/2, 0, 0)" ]
+            } ]
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "composite",
+         "name" : "wallBottom",
+         "Param" : [ {
+            "name" : "pos.x",
+            "value" : "12"
+         }, {
+            "name" : "rot.y",
+            "value" : "90"
+         }, {
+            "name" : "local.scale",
+            "value" : "0.2;2.90;12.0"
+         }, {
+            "name" : "reference",
+            "value" : "material.roughness"
+         } ],
+         "Scene" : [ {
+            "type" : "object",
+            "create" : "box",
+            "Param" : [ {
+               "name" : "pattern",
+               "value" : "fill"
+            } ]
+         }, {
+            "type" : "object",
+            "create" : "box",
+            "Param" : [ {
+               "name" : "pattern",
+               "value" : "bar"
+            }, {
+               "name" : "begin",
+               "value" : "vector(0.06,-$scaleY/2,$scaleZ/2-0.075)"
+            }, {
+               "name" : "end",
+               "value" : "vector(0.06,$scaleY/2,$scaleZ/2-0.075))"
+            }, {
+               "name" : "section",
+               "value" : "0.15;0.12"
+            } ]
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "composite",
+         "name" : "roofBottom",
+         "Param" : [ {
+            "name" : "pos",
+            "value" : "12;2.90;0"
+         }, {
+            "name" : "rot.y",
+            "value" : "90"
+         }, {
+            "name" : "roof.scale",
+            "value" : "3.0;0.1;2;12"
+         } ],
+         "Scene" : [ {
+            "type" : "object",
+            "create" : "extrude",
+            "Param" : [ {
+               "name" : "thickness",
+               "value" : "0.1"
+            } ],
+            "Path" : [ {
+               "name" : "shape",
+               "type" : "fill",
+               "id" : 1
+            }, {
+               "name" : "hole",
+               "active" : "true",
+               "id" : 2,
+               "Param" : [ {
+                  "name" : "inverse.point",
+                  "value" : "true"
+               } ],
+               "Point" : [ "vector(-$scaleZ/2+$scaleY*0.5, -$scaleY*0.45, 0)", "vector(-$scaleZ/2+$scaleY*0.5, -$scaleY*0.075, 0)", "vector(-$scaleZ/2+$scaleY*0.2, -$scaleY*0.075, 0)", "vector(-$scaleZ/2+$scaleY*0.2, -$scaleY*0.45, 0)" ]
+            } ]
+         }, {
+            "type" : "object",
+            "create" : "box",
+            "Param" : [ {
+               "name" : "pattern",
+               "value" : "bar"
+            }, {
+               "name" : "begin",
+               "value" : "vector(0.05,0,-$scaleZ/2)"
+            }, {
+               "name" : "end",
+               "value" : "vector(0.05,0,$scaleZ/2))"
+            }, {
+               "name" : "section",
+               "value" : "0.10;0.20"
+            }, {
+               "name" : "material.diffuseColor",
+               "value" : "0.7;0.7;0.7"
+            } ]
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "composite",
+         "name" : "wallTop",
+         "Param" : [ {
+            "name" : "pos.z",
+            "value" : "6"
+         }, {
+            "name" : "rot.y",
+            "value" : "-90"
+         }, {
+            "name" : "local.scale",
+            "value" : "0.2;2.90;12.0"
+         } ],
+         "Scene" : [ {
+            "type" : "object",
+            "create" : "box",
+            "Param" : [ {
+               "name" : "pattern",
+               "value" : "fill"
+            } ]
+         }, {
+            "type" : "object",
+            "create" : "box",
+            "Param" : [ {
+               "name" : "pattern",
+               "value" : "bar"
+            }, {
+               "name" : "begin",
+               "value" : "vector(0.06,-$scaleY/2,-$scaleZ/2+0.075)"
+            }, {
+               "name" : "end",
+               "value" : "vector(0.06,$scaleY/2,-$scaleZ/2+0.075))"
+            }, {
+               "name" : "section",
+               "value" : "0.15;0.12"
+            } ]
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "composite",
+         "name" : "roofTop",
+         "Param" : [ {
+            "name" : "pos",
+            "value" : "0;2.90;6"
+         }, {
+            "name" : "rot.y",
+            "value" : "-90"
+         }, {
+            "name" : "roof.scale",
+            "value" : "3.0;0.1;2;12"
+         }, {
+            "name" : "material.diffuseMap.url",
+            "value" : "./assets/textures/woodbar/basecolor.jpg"
+         } ],
+         "Scene" : [ {
+            "type" : "object",
+            "create" : "extrude",
+            "Param" : [ {
+               "name" : "thickness",
+               "value" : "0.1"
+            } ],
+            "Path" : [ {
+               "name" : "shape",
+               "type" : "fill",
+               "id" : 3
+            }, {
+               "name" : "hole",
+               "active" : "true",
+               "id" : 4,
+               "Point" : [ "vector(-$scaleZ/4, -$scaleY/4, 0)", "vector(-$scaleZ/4, $scaleY/4, 0)", "vector($scaleZ/4, $scaleY/4, 0)", "vector($scaleZ/4, -$scaleY/4, 0)" ]
+            } ]
+         }, {
+            "type" : "object",
+            "create" : "box",
+            "Param" : [ {
+               "name" : "pattern",
+               "value" : "bar"
+            }, {
+               "name" : "begin",
+               "value" : "vector(0.05,0,-$scaleZ/2)"
+            }, {
+               "name" : "end",
+               "value" : "vector(0.05,0,$scaleZ/2))"
+            }, {
+               "name" : "section",
+               "value" : "0.10;0.20"
+            } ]
+         } ]
+      } ],
+      "Exec" : [ ]
+   }, {
+      "id" : "18",
+      "type" : "3d",
+      "Scene" : [ {
+         "type" : "object",
+         "create" : "instance",
+         "name" : "bucket-list",
+         "Param" : [ {
+            "name" : "source",
+            "value" : "bucket-template"
+         }, {
+            "name" : "generate",
+            "value" : "true"
+         } ],
+         "SimpleVar" : [ {
+            "name" : "u",
+            "type" : "sequence",
+            "value" : "1-15"
+         }, {
+            "name" : "rot",
+            "type" : "random",
+            "main" : "false",
+            "value" : "0;360"
+         } ],
+         "Var" : [ {
+            "name" : "pos",
+            "type" : "random",
+            "main" : "false",
+            "Param" : [ {
+               "name" : "min",
+               "value" : "3;0;1"
+            }, {
+               "name" : "max",
+               "value" : "9;0;5"
+            }, {
+               "name" : "distance",
+               "value" : "1.0"
+            } ]
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "composite",
+         "name" : "bucket-template",
+         "active" : "false",
+         "Param" : [ {
+            "name" : "gizmo",
+            "value" : "true"
+         }, {
+            "name" : "pos",
+            "value" : "$pos"
+         }, {
+            "name" : "rot.y",
+            "value" : "$rot"
+         }, {
+            "name" : "local.pos",
+            "value" : "vector(0, $scaleY/2, 0)"
+         }, {
+            "name" : "local.scale",
+            "value" : "0.4;0.3;0.4"
+         } ],
+         "Scene" : [ {
+            "type" : "object",
+            "create" : "cylinder",
+            "Param" : [ {
+               "name" : "scale",
+               "value" : "vector($scaleX, $scaleY, $scaleX)"
+            } ]
+         }, {
+            "type" : "object",
+            "create" : "cylinder",
+            "Param" : [ {
+               "name" : "scale",
+               "value" : "vector($scaleX*1.05, $scaleY/5, $scaleX*1.05)"
+            }, {
+               "name" : "pos.y",
+               "value" : "$scaleY*0.525"
+            }, {
+               "name" : "material.diffuseColor",
+               "value" : "0.8;0.4;0.4"
+            } ]
+         }, {
+            "type" : "object",
+            "create" : "merge",
+            "Param" : [ {
+               "name" : "filename",
+               "value" : "bucketHandle.obj"
+            }, {
+               "name" : "url",
+               "value" : "library/composite/"
+            }, {
+               "name" : "scale.x",
+               "value" : "$scaleX*0.475/0.4"
+            }, {
+               "name" : "pos.y",
+               "value" : "$scaleY*0.35"
+            }, {
+               "name" : "rot.x",
+               "value" : "120"
+            }, {
+               "name" : "reference",
+               "value" : "material.metallic-3"
+            } ]
+         } ]
+      } ],
+      "Exec" : [ ]
+   }, {
+      "id" : "atelier-camera",
+      "type" : "camera",
+      "Scene" : [ {
+         "type" : "camera",
+         "create" : "universal",
+         "name" : "leftIn",
+         "Param" : [ {
+            "name" : "pos",
+            "value" : "1.1999998;1.5;3.0"
+         }, {
+            "name" : "target",
+            "value" : "6.0;1.5;3.0"
+         }, {
+            "name" : "current",
+            "value" : "true"
+         } ]
+      }, {
+         "type" : "camera",
+         "create" : "universal",
+         "name" : "bottomIn",
+         "Param" : [ {
+            "name" : "pos",
+            "value" : "6.0;1.5;0.5999999"
+         }, {
+            "name" : "target",
+            "value" : "6.0;1.5;3.0"
+         }, {
+            "name" : "current",
+            "value" : "false"
+         } ]
+      }, {
+         "type" : "camera",
+         "create" : "universal",
+         "name" : "rightIn",
+         "Param" : [ {
+            "name" : "pos",
+            "value" : "10.8;1.5;3.0"
+         }, {
+            "name" : "target",
+            "value" : "6.0;1.5;3.0"
+         }, {
+            "name" : "current",
+            "value" : "false"
+         } ]
+      }, {
+         "type" : "camera",
+         "create" : "universal",
+         "name" : "topIn",
+         "Param" : [ {
+            "name" : "pos",
+            "value" : "6.0;1.5;5.4"
+         }, {
+            "name" : "target",
+            "value" : "6.0;1.5;3.0"
+         }, {
+            "name" : "current",
+            "value" : "false"
+         } ]
+      }, {
+         "type" : "camera",
+         "create" : "universal",
+         "name" : "leftOut",
+         "Param" : [ {
+            "name" : "pos",
+            "value" : "-6.0;1.5;3.0"
+         }, {
+            "name" : "target",
+            "value" : "6.0;1.5;3.0"
+         }, {
+            "name" : "current",
+            "value" : "false"
+         } ]
+      }, {
+         "type" : "camera",
+         "create" : "universal",
+         "name" : "bottomOut",
+         "Param" : [ {
+            "name" : "pos",
+            "value" : "6.0;1.5;-9.0"
+         }, {
+            "name" : "target",
+            "value" : "6.0;1.5;3.0"
+         }, {
+            "name" : "current",
+            "value" : "false"
+         } ]
+      }, {
+         "type" : "camera",
+         "create" : "universal",
+         "name" : "rightOut",
+         "Param" : [ {
+            "name" : "pos",
+            "value" : "18.0;1.5;3.0"
+         }, {
+            "name" : "target",
+            "value" : "6.0;1.5;3.0"
+         }, {
+            "name" : "current",
+            "value" : "false"
+         } ]
+      }, {
+         "type" : "camera",
+         "create" : "universal",
+         "name" : "topOut",
+         "Param" : [ {
+            "name" : "pos",
+            "value" : "6.0;1.5;15.0"
+         }, {
+            "name" : "target",
+            "value" : "6.0;1.5;3.0"
+         }, {
+            "name" : "current",
+            "value" : "false"
+         } ]
+      }, {
+         "type" : "camera",
+         "create" : "universal",
+         "name" : "upOut",
+         "Param" : [ {
+            "name" : "pos",
+            "value" : "6.0;7.5;3.0"
+         }, {
+            "name" : "target",
+            "value" : "6.0;1.5;3.0"
+         }, {
+            "name" : "current",
+            "value" : "false"
+         } ]
+      } ],
+      "Exec" : [ ]
+   } ]
+}

@@ -1,0 +1,14 @@
+<div id="material-selector" [style]="style">
+	<div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 14px;">Material Models</div>
+	<div class="col-lg-6 col-md-6 col-sm-6">
+	    <a style="float:right; font-size: 14px" (click)="hide()"><i class="fa fa-times"></i></a>
+	</div>
+	<div class="col-lg-12 col-md-12 col-sm-12" style="padding-top:6px">
+	 	<div *ngFor="let scene of sceneList; let i = index" class="col-sm-1 col-md-1 col-lg-1" style="padding:3px;">
+			<div [ngClass]="{'thumb-selected' : i == selected}">
+				<img class="img-responsive" src="{{getThumbUrl(scene)}}" (mousedown)="select(scene, i)" alt="" style="cursor: pointer">
+			</div>
+	 		<div class="col-lg-12 col-md-12 col-sm-12" style="padding:0px">{{scene.name}}</div>
+   		</div>
+   </div>
+</div>

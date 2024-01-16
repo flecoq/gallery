@@ -1,0 +1,26 @@
+TEXT INPUT
+<input type="text" class="form-control" style="width:110px; font-size:12px" placeholder="tag filter">
+<input type="text" class="form-control" style="font-size:12px" placeholder="title" [(ngModel)]="title" (ngModelChange)="updateModel(false)"/>
+
+RADIO INPUT
+<input type="radio" name="type" id="picture" value="picture" (click)="updateTypeFilter('picture')" checked>
+<input type="radio" name="type" id="object" value="object" (click)="updateTypeFilter('object')">
+
+RADIO INPUT
+<input type="checkbox" [(ngModel)]="activeScene" />
+
+RANGE INPUT
+<input type="range" class="custom-range" min="10" max="140" [(ngModel)]="fov" (ngModelChange)="updateFov()">
+
+TEXTAREA
+<textarea class="form-control" name="message" id="contact-message" style="font-size:12px" rows="8" data-rule="required" [(ngModel)]="description" (ngModelChange)="updateModel(false)"></textarea>
+
+BUTTON
+<a class="btn btn-round btn-theme04" style="font-size:12px" (click)="close()">
+class: btn-default, btn-primary, btn-success, btn-info, btn-warning, btn-danger
+
+DIV VISIBLE
+<div class="col-lg-12 col-md-12 col-sm-12" [style]="wallStyle"> 
+
+HORIZ SCROLL
+this.treeExplorerStyle = "visibility: visible; height: 50%; overflow: auto;";

@@ -1,0 +1,46 @@
+<div id="menubar">
+	<div style="font-size: 14px;padding-left: 64px; padding-top: 14px"><a [routerLink]="['/author', modelService.account.id]" style="color: #aaa"><i class="fa fa-home" style="font-size:24px; cursor: pointer"></i></a></div>
+	<div style="font-size: 14px;padding-left: 28px; padding-top: 18px"><a (click)="onEditRoom()" style="color: #aaa"><i class="fa fa-pencil" style="font-size:14px; cursor: pointer"></i>&nbsp;&nbsp;Edit Room</a></div>
+	<div style="font-size: 14px;padding-left: 28px; padding-top: 18px"><a href="#assetManager" data-backdrop="false" data-toggle="modal" style="color: #aaa"><i class="fa fa-picture-o" style="font-size:14px"></i>&nbsp;&nbsp;Assets</a></div>
+	<div style="font-size: 14px;padding-left: 28px; padding-top: 18px"><a (click)="showSupportList()" style="color: #aaa"><i class="fa fa-square" style="font-size:14px"></i>&nbsp;&nbsp;Assets Supports</a></div>
+	<div style="font-size: 14px;padding-left: 80px; padding-top: 18px"><a (click)="monitoring()" style="color: #aaa"><i class="fa fa-desktop" style="font-size:12px"></i>&nbsp;&nbsp;Monitoring</a></div>
+	<div style="font-size: 14px;padding-left: 20px; padding-top: 18px"><a (click)="showProcessTool()" style="color: #aaa"><i class="fa fa-gears" style="font-size:12px"></i>&nbsp;&nbsp;Process Tool</a></div>
+</div>
+
+<div id="tool-left">
+   <div style="padding-left:4px; padding-bottom: 4px;"><a [ngClass]="moveBtnCss" title="move object" (click)="setGizmoMode('move')"><i class="fa fa-arrows" style="font-size:10px"></i></a></div>
+   <div style="padding-left:4px; padding-bottom: 4px;"><a [ngClass]="rotateBtnCss" title="rotate object" (click)="setGizmoMode('rotate')"><i class="fa fa-repeat" style="font-size:10px"></i></a></div>
+   <div style="padding-left:4px; padding-bottom: 8px;"><a [ngClass]="scaleBtnCss" title="scale object" (click)="setGizmoMode('scale')"><i class="fa fa-expand" style="font-size:10px"></i></a></div>
+   <div style="padding-left:4px; padding-bottom: 4px;"><a class="btn btn-danger" title="delete object" (click)="delete()"><i class="fa fa-trash-o" style="font-size:10px"></i></a></div>
+   <div id="tool-camera" style="padding-left:8px; padding-top:14px;"><a title="camera details" (click)="showCameraTool()"><i class="fa fa-video-camera" style="font-size:22px"></i></a></div>
+</div>
+
+<div id="monitor" *ngIf="doMonitoring">
+	{{engine.monitor.currentFrameTime}}<br/>
+	{{engine.monitor.averageFrameTime}}<br/>
+	{{engine.monitor.totalShaderTime}}<br/>
+	{{engine.monitor.averageShaderTime}}<br/>
+	{{engine.monitor.compilerShaderCount}}<br/>
+	total vertices:&nbsp;{{engine.monitor.totalVertices}}<br/>
+	total indices:&nbsp;{{engine.monitor.totalIndices}}<br/>
+</div>
+
+<app-engine #engineComponent (event)="engineComponentEventHandler($event)"></app-engine>
+
+<app-picture-detail #pictureDetail (event)="pictureDetailEventHandler($event)"></app-picture-detail>
+
+<app-object-detail #objectDetail (event)="objectDetailEventHandler($event)"></app-object-detail>
+	
+<app-material-selector #materialSelector (event)="materialSelectorEventHandler($event)"></app-material-selector>
+	
+<app-support-list #supportList (event)="supportListEventHandler($event)"></app-support-list>
+	
+<app-support-detail #supporDetail (event)="supportDetailEventHandler($event)"></app-support-detail>
+	
+<app-bottom-tool #bottomTool (event)="bottomToolEventHandler($event)"></app-bottom-tool>
+
+<app-camera-tool #cameraTool (event)="cameraToolEventHandler($event)"></app-camera-tool>
+	
+<app-asset-manager #assetManager (event)="assetManagerEventHandler($event)"></app-asset-manager>
+	
+<app-uploader #uploader (event)="uploaderEventHandler($event)"></app-uploader>

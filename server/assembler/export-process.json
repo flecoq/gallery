@@ -1,0 +1,487 @@
+{
+   "id" : "11",
+   "type" : "3d",
+   "Scene" : [ {
+      "type" : "object",
+      "create" : "hemishpericLight",
+      "name" : "light",
+      "active" : "true",
+      "Param" : [ {
+         "name" : "direction",
+         "value" : "0;1;0"
+      }, {
+         "name" : "diffuse",
+         "value" : "1;1;1"
+      }, {
+         "name" : "intensity",
+         "value" : "1.0"
+      } ]
+   }, {
+      "type" : "object",
+      "create" : "pointLight",
+      "name" : "pointLight",
+      "active" : "true",
+      "Param" : [ {
+         "name" : "pos",
+         "value" : "5;5;3.5"
+      }, {
+         "name" : "direction",
+         "value" : "-1;1;0"
+      }, {
+         "name" : "intensity",
+         "value" : "1.0"
+      }, {
+         "name" : "diffuse",
+         "value" : "1;1;1"
+      }, {
+         "name" : "shadow",
+         "value" : "true"
+      }, {
+         "name" : "useBlurExponentialShadowMap",
+         "value" : "true"
+      }, {
+         "name" : "useKernelBlur",
+         "value" : "true"
+      }, {
+         "name" : "blurKernel",
+         "value" : "128"
+      } ]
+   }, {
+      "type" : "object",
+      "create" : "floor",
+      "name" : "floor",
+      "Param" : [ {
+         "name" : "dimension",
+         "value" : "7;0.4;7"
+      }, {
+         "name" : "material.diffuseMap.url",
+         "value" : "./assets/textures/substance_2.jpg"
+      }, {
+         "name" : "shadow.receive",
+         "value" : "true"
+      } ]
+   }, {
+      "type" : "object",
+      "create" : "composite",
+      "name" : "wall1",
+      "Param" : [ {
+         "name" : "local.scale",
+         "value" : "0.2;3;7"
+      }, {
+         "name" : "local.pos",
+         "value" : "vector(0, $scaleY/2, $scaleZ/2)"
+      } ],
+      "Scene" : [ {
+         "type" : "object",
+         "create" : "box",
+         "Param" : [ {
+            "name" : "pattern",
+            "value" : "fill"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "box",
+         "Param" : [ {
+            "name" : "pattern",
+            "value" : "border"
+         }, {
+            "name" : "margin",
+            "value" : "0.4"
+         }, {
+            "name" : "border",
+            "value" : "0.1"
+         }, {
+            "name" : "corner",
+            "value" : "0.1"
+         }, {
+            "name" : "exclude",
+            "value" : "top"
+         } ]
+      } ]
+   }, {
+      "type" : "object",
+      "create" : "composite",
+      "name" : "wall2",
+      "Param" : [ {
+         "name" : "pos.z",
+         "value" : "7"
+      }, {
+         "name" : "rot.y",
+         "value" : "-90"
+      }, {
+         "name" : "local.scale",
+         "value" : "0.2;3;7"
+      }, {
+         "name" : "local.pos",
+         "value" : "vector(0, $scaleY/2, $scaleZ/2)"
+      }, {
+         "name" : "border",
+         "value" : "0.1"
+      } ],
+      "Scene" : [ {
+         "type" : "object",
+         "create" : "box",
+         "Param" : [ {
+            "name" : "pos.x",
+            "value" : "-$scaleX/2"
+         }, {
+            "name" : "scale",
+            "value" : "vector($scaleX, $scaleY, $scaleZ)"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "box",
+         "Param" : [ {
+            "name" : "scale",
+            "value" : "vector($border, $border, $scaleZ)"
+         }, {
+            "name" : "pos",
+            "value" : "vector($border/2, $border/2-$scaleY/2, 0)"
+         } ]
+      } ]
+   }, {
+      "type" : "object",
+      "create" : "composite",
+      "name" : "wall2-top",
+      "active" : "false",
+      "Param" : [ {
+         "name" : "pos",
+         "value" : "0;3;7"
+      }, {
+         "name" : "rot.y",
+         "value" : "-90"
+      }, {
+         "name" : "roof.scale",
+         "value" : "3.5;0.1;2;7"
+      } ],
+      "Scene" : [ {
+         "type" : "object",
+         "create" : "extrude",
+         "Param" : [ {
+            "name" : "thickness",
+            "value" : "0.1"
+         }, {
+            "name" : "pos.x",
+            "value" : "-0.1"
+         } ],
+         "Path" : [ {
+            "name" : "shape",
+            "type" : "fill",
+            "id" : 22
+         }, {
+            "name" : "hole",
+            "id" : 23,
+            "Point" : [ "vector($scaleY/4, 0, -$scaleZ/4)", "vector($scaleY/4, 0, $scaleZ/4)", "vector(-$scaleY/4, 0, $scaleZ/4)", "vector(-$scaleY/4, 0, -$scaleZ/4)" ]
+         } ]
+      } ]
+   }, {
+      "type" : "object",
+      "create" : "composite",
+      "name" : "wall3",
+      "Param" : [ {
+         "name" : "pos",
+         "value" : "7;0;7"
+      }, {
+         "name" : "rot.y",
+         "value" : "-180"
+      }, {
+         "name" : "local.scale",
+         "value" : "0.2;3;2.5"
+      }, {
+         "name" : "local.pos",
+         "value" : "vector(0, $scaleY/2, $scaleZ/2)"
+      }, {
+         "name" : "border",
+         "value" : "0.1"
+      }, {
+         "name" : "margin",
+         "value" : "0.4"
+      }, {
+         "name" : "material.id",
+         "value" : "main"
+      }, {
+         "name" : "material.diffuseColor",
+         "value" : "0.5;0.5;0.5"
+      }, {
+         "name" : "material.id",
+         "value" : "border"
+      }, {
+         "name" : "material.diffuseColor",
+         "value" : "1.0;1.0;1.0"
+      } ],
+      "Scene" : [ {
+         "type" : "object",
+         "create" : "box",
+         "Param" : [ {
+            "name" : "material.ref",
+            "value" : "main"
+         }, {
+            "name" : "pos.x",
+            "value" : "-$scaleX/2"
+         }, {
+            "name" : "scale",
+            "value" : "vector($scaleX, $scaleY, $scaleZ)"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "box",
+         "Param" : [ {
+            "name" : "material.ref",
+            "value" : "border"
+         }, {
+            "name" : "scale",
+            "value" : "vector($scaleZ-2*$margin, $border, $border)"
+         }, {
+            "name" : "pos",
+            "value" : "vector(0, $margin-$scaleY/2, 0)"
+         }, {
+            "name" : "uw",
+            "value" : "z;-x"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "box",
+         "Param" : [ {
+            "name" : "material.ref",
+            "value" : "border"
+         }, {
+            "name" : "scale",
+            "value" : "vector($scaleZ-2*$margin, $border, $border)"
+         }, {
+            "name" : "pos",
+            "value" : "vector(0, $scaleY/2-$margin, 0)"
+         }, {
+            "name" : "uw",
+            "value" : "z;-x"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "box",
+         "Param" : [ {
+            "name" : "material.ref",
+            "value" : "border"
+         }, {
+            "name" : "scale",
+            "value" : "vector($scaleY-2*$margin, $border, $border)"
+         }, {
+            "name" : "pos",
+            "value" : "vector(0, 0, $scaleZ/2-$margin)"
+         }, {
+            "name" : "uw",
+            "value" : "y;-z"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "box",
+         "Param" : [ {
+            "name" : "material.ref",
+            "value" : "border"
+         }, {
+            "name" : "scale",
+            "value" : "vector($scaleY-2*$margin, $border, $border)"
+         }, {
+            "name" : "pos",
+            "value" : "vector(0, 0, $margin-$scaleZ/2)"
+         }, {
+            "name" : "uw",
+            "value" : "y;-z"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "box",
+         "Param" : [ {
+            "name" : "material.ref",
+            "value" : "border"
+         }, {
+            "name" : "scale",
+            "value" : "vector($border, $margin/2, $margin/2)"
+         }, {
+            "name" : "pos",
+            "value" : "vector(0, $margin-$scaleY/2, $margin-$scaleZ/2)"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "box",
+         "Param" : [ {
+            "name" : "material.ref",
+            "value" : "border"
+         }, {
+            "name" : "scale",
+            "value" : "vector($border, $margin/2, $margin/2)"
+         }, {
+            "name" : "pos",
+            "value" : "vector(0, $scaleY/2-$margin, $margin-$scaleZ/2)"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "box",
+         "Param" : [ {
+            "name" : "material.ref",
+            "value" : "border"
+         }, {
+            "name" : "scale",
+            "value" : "vector($border, $margin/2, $margin/2)"
+         }, {
+            "name" : "pos",
+            "value" : "vector(0, $margin-$scaleY/2, $scaleZ/2-$margin)"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "box",
+         "Param" : [ {
+            "name" : "material.ref",
+            "value" : "border"
+         }, {
+            "name" : "scale",
+            "value" : "vector($border, $margin/2, $margin/2)"
+         }, {
+            "name" : "pos",
+            "value" : "vector(0, $scaleY/2-$margin, $scaleZ/2-$margin)"
+         } ]
+      } ]
+   }, {
+      "type" : "object",
+      "create" : "composite",
+      "name" : "wall4",
+      "Param" : [ {
+         "name" : "pos",
+         "value" : "7;0;2.5"
+      }, {
+         "name" : "rot.y",
+         "value" : "-180"
+      }, {
+         "name" : "local.scale",
+         "value" : "0.2;3;2.5"
+      }, {
+         "name" : "border",
+         "value" : "0.2"
+      } ],
+      "Scene" : [ {
+         "type" : "object",
+         "create" : "box",
+         "Param" : [ {
+            "name" : "pos.x",
+            "value" : "-$scaleX/2"
+         }, {
+            "name" : "scale",
+            "value" : "vector($scaleX, $scaleY, $scaleZ)"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "merge",
+         "Param" : [ {
+            "name" : "filename",
+            "value" : "border.obj"
+         }, {
+            "name" : "url",
+            "value" : "library/composite/"
+         }, {
+            "name" : "scale",
+            "value" : "vector($border, $border, $scaleZ)"
+         }, {
+            "name" : "pos",
+            "value" : "vector(0, -$scaleY/2, -$scaleZ/2)"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "merge",
+         "Param" : [ {
+            "name" : "filename",
+            "value" : "border.obj"
+         }, {
+            "name" : "url",
+            "value" : "library/composite/"
+         }, {
+            "name" : "scale",
+            "value" : "vector($border, $border, $scaleZ)"
+         }, {
+            "name" : "pos",
+            "value" : "vector(0, $scaleY/2, $scaleZ/2)"
+         }, {
+            "name" : "uw",
+            "value" : "x;-z"
+         } ]
+      } ]
+   }, {
+      "type" : "object",
+      "create" : "composite",
+      "name" : "wall5",
+      "Param" : [ {
+         "name" : "pos.x",
+         "value" : "7"
+      }, {
+         "name" : "rot.y",
+         "value" : "90"
+      }, {
+         "name" : "local.scale",
+         "value" : "0.2;3;7"
+      } ],
+      "Scene" : [ {
+         "type" : "object",
+         "create" : "box",
+         "active" : "true",
+         "Param" : [ {
+            "name" : "pattern",
+            "value" : "fill"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "merge",
+         "active" : "true",
+         "Param" : [ {
+            "name" : "pattern",
+            "value" : "border"
+         }, {
+            "name" : "filename",
+            "value" : "border.obj"
+         }, {
+            "name" : "url",
+            "value" : "library/composite/"
+         }, {
+            "name" : "border",
+            "value" : "0.2"
+         } ]
+      }, {
+         "type" : "object",
+         "create" : "merge",
+         "active" : "false",
+         "Param" : [ {
+            "name" : "filename",
+            "value" : "border.obj"
+         }, {
+            "name" : "url",
+            "value" : "library/composite/"
+         }, {
+            "name" : "scale",
+            "value" : "vector(0.2, 0.2, $scaleZ)"
+         }, {
+            "name" : "pos",
+            "value" : "vector(0, -$scaleY/2, -$scaleZ/2)"
+         } ]
+      } ]
+   }, {
+      "type" : "object",
+      "create" : "composite",
+      "name" : "wall5-top",
+      "active" : "false",
+      "Param" : [ {
+         "name" : "pos",
+         "value" : "7;3;0"
+      }, {
+         "name" : "rot.y",
+         "value" : "90"
+      }, {
+         "name" : "roof.scale",
+         "value" : "3.5;0.1;2;7"
+      } ],
+      "Scene" : [ {
+         "type" : "object",
+         "create" : "box",
+         "Param" : [ {
+            "name" : "pattern",
+            "value" : "fill"
+         } ]
+      } ]
+   } ],
+   "Exec" : [ ]
+}

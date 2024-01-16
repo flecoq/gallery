@@ -1,0 +1,17 @@
+<div class="col-lg-12 col-md-12 col-sm-12" style="padding-left: 0px; padding-top:10px">
+	<div class="col-lg-2 col-md-2 col-sm-2" style="padding-left: 0px; padding-top: 8px; font-size:14px">Material&nbsp;:</div>
+	<div class="col-lg-2 col-md-2col-sm-2" style="padding-left: 0px;">
+		<a class="btn btn-info" (click)="onChoiceModel()">Model</a>
+	</div>
+	<div class="col-lg-2 col-md-2 col-sm-2">
+		<a class="btn btn-info" (click)="onEdit()">Edit</a>
+	</div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12" style="padding-left:0px; padding-top:8px">
+	<div class="col-lg-1 col-md-1 col-sm-1" style="padding-left:0px;">
+		<a class="btn btn-warning" (click)="snapshot()"><i class="fa fa-camera" style="font-size:10px"></i></a>
+	</div>
+	<div class="col-lg-8 col-md-8 col-sm-8">
+		<input type="text" class="form-control" style="font-size:12px" placeholder="filename" [(ngModel)]="filename">
+	</div>
+</div>

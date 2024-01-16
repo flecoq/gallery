@@ -1,0 +1,275 @@
+{
+   "id" : "material",
+   "type" : "material",
+   "Process" : [ {
+      "id" : "material-1",
+      "type" : "3d",
+      "Scene" : [ {
+         "type" : "object",
+         "name" : "white",
+         "Param" : [ {
+            "name" : "material.diffuseColor",
+            "value" : "1.0;1.0;1.0"
+         } ]
+      }, {
+         "type" : "object",
+         "name" : "black",
+         "Param" : [ {
+            "name" : "material.diffuseColor",
+            "value" : "0;0;0"
+         } ]
+      }, {
+         "type" : "object",
+         "name" : "red",
+         "Param" : [ {
+            "name" : "material.diffuseColor",
+            "value" : "1.0;0.1;0.1"
+         } ]
+      }, {
+         "type" : "object",
+         "name" : "green",
+         "Param" : [ {
+            "name" : "material.diffuseColor",
+            "value" : "0.1;1.0;0.1"
+         } ]
+      }, {
+         "type" : "object",
+         "name" : "blue",
+         "Param" : [ {
+            "name" : "material.diffuseColor",
+            "value" : "0.1;0.1;1.0"
+         } ]
+      }, {
+         "type" : "object",
+         "name" : "wood",
+         "Param" : [ {
+            "name" : "material.diffuseMap.url",
+            "value" : "./assets/textures/substance_2.jpg"
+         } ]
+      }, {
+         "type" : "object",
+         "name" : "granit",
+         "Param" : [ {
+            "name" : "material.diffuseMap.url",
+            "value" : "./assets/textures/tutorial.jpg"
+         } ]
+      }, {
+         "type" : "object",
+         "name" : "sofa",
+         "Param" : [ {
+            "name" : "material.ambientMap.url",
+            "value" : "./assets/textures/sofa/sofa_ambientocclusion.jpg"
+         }, {
+            "name" : "material.ambientMap.tile",
+            "value" : "2;2"
+         }, {
+            "name" : "material.diffuseMap.url",
+            "value" : "./assets/textures/sofa/sofa_diffuse.jpg"
+         }, {
+            "name" : "material.diffuseMap.tile",
+            "value" : "2;2"
+         }, {
+            "name" : "material.bumpMap.url",
+            "value" : "./assets/textures/sofa/sofa_normal.jpg"
+         }, {
+            "name" : "material.bumpMap.tile",
+            "value" : "2;2"
+         }, {
+            "name" : "material.bumpMap.inverse.normal",
+            "value" : "true"
+         }, {
+            "name" : "material.bumpMap.level",
+            "value" : "0.6"
+         }, {
+            "name" : "material.specularColor",
+            "value" : "0.2;0.2;0.2"
+         } ]
+      }, {
+         "type" : "object",
+         "name" : "wood-bar",
+         "Param" : [ {
+            "name" : "material.type",
+            "value" : "PBRMetallicRoughness"
+         }, {
+            "name" : "material.baseMap.url",
+            "value" : "./assets/textures/woodbar/basecolor.jpg"
+         } ]
+      } ],
+      "Exec" : [ ]
+   }, {
+      "id" : "material-pbr",
+      "type" : "3d",
+      "Scene" : [ {
+         "type" : "object",
+         "name" : "metallic-1",
+         "Param" : [ {
+            "name" : "material.type",
+            "value" : "PBRMetallicRoughness"
+         }, {
+            "name" : "material.metallic",
+            "value" : "1.0"
+         }, {
+            "name" : "material.roughness",
+            "value" : "0.4"
+         } ]
+      }, {
+         "type" : "object",
+         "name" : "metallic-2",
+         "Param" : [ {
+            "name" : "material.type",
+            "value" : "PBRSpecularGlossiness"
+         }, {
+            "name" : "material.glossiness",
+            "value" : "0.8"
+         } ]
+      }, {
+         "type" : "object",
+         "name" : "metallic-3",
+         "Param" : [ {
+            "name" : "material.type",
+            "value" : "PBR"
+         } ]
+      }, {
+         "type" : "object",
+         "name" : "roughness",
+         "Param" : [ {
+            "name" : "material.type",
+            "value" : "PBRMetallicRoughness"
+         }, {
+            "name" : "material.metallic",
+            "value" : "0.2"
+         }, {
+            "name" : "material.roughness",
+            "value" : "1.0"
+         } ]
+      }, {
+         "type" : "object",
+         "name" : "plastic-1",
+         "Param" : [ {
+            "name" : "material.type",
+            "value" : "PBRSpecularGlossiness"
+         }, {
+            "name" : "material.glossiness",
+            "value" : "0.4"
+         } ]
+      }, {
+         "type" : "object",
+         "name" : "plastic-2",
+         "Param" : [ {
+            "name" : "material.type",
+            "value" : "PBR"
+         }, {
+            "name" : "material.metallic",
+            "value" : "1.0"
+         }, {
+            "name" : "material.roughness",
+            "value" : "1.0"
+         }, {
+            "name" : "material.clearCoat.isEnable",
+            "value" : "true"
+         } ]
+      }, {
+         "type" : "object",
+         "name" : "glass-1",
+         "Param" : [ {
+            "name" : "material.type",
+            "value" : "PBR"
+         }, {
+            "name" : "material.albedoColor",
+            "value" : "0.95;0.95;0.95"
+         }, {
+            "name" : "material.reflectivityColor",
+            "value" : "0.2;0.2;0.2"
+         }, {
+            "name" : "material.indexOfRefraction",
+            "value" : "0.52"
+         }, {
+            "name" : "material.alpha",
+            "value" : "0.5"
+         }, {
+            "name" : "material.directIntensity",
+            "value" : "0.0"
+         }, {
+            "name" : "material.environmentIntensity",
+            "value" : "0.7"
+         }, {
+            "name" : "material.cameraExposure",
+            "value" : "0.66"
+         }, {
+            "name" : "material.cameraContrast",
+            "value" : "1.66"
+         }, {
+            "name" : "material.microSurface",
+            "value" : "1"
+         } ]
+      }, {
+         "type" : "object",
+         "name" : "glass-2",
+         "Param" : [ {
+            "name" : "material.type",
+            "value" : "PBR"
+         }, {
+            "name" : "material.subSurface.tintColor",
+            "value" : "0.0;0.766;0.766"
+         }, {
+            "name" : "material.metallic",
+            "value" : "0.0"
+         }, {
+            "name" : "material.roughness",
+            "value" : "0.0"
+         }, {
+            "name" : "material.subSurface.isRefractionEnabled",
+            "value" : "true"
+         }, {
+            "name" : "material.subSurface.indexOfRefraction",
+            "value" : "1.5"
+         } ]
+      }, {
+         "type" : "object",
+         "name" : "glass-3",
+         "Param" : [ {
+            "name" : "material.type",
+            "value" : "PBR"
+         }, {
+            "name" : "material.metallic",
+            "value" : "0.0"
+         }, {
+            "name" : "material.roughness",
+            "value" : "0.0"
+         }, {
+            "name" : "material.subSurface.isTranslucencyEnabled",
+            "value" : "true"
+         } ]
+      }, {
+         "type" : "object",
+         "name" : "wood-bar",
+         "Param" : [ {
+            "name" : "material.type",
+            "value" : "PBRMetallicRoughness"
+         }, {
+            "name" : "material.baseMap.url",
+            "value" : "./assets/textures/woodbar/basecolor.jpg"
+         }, {
+            "name" : "material.metallicRoughnessMap.url",
+            "value" : "./assets/textures/woodbar/roughness.jpg"
+         }, {
+            "name" : "material.normalMap.url",
+            "value" : "./assets/textures/woodbar/normal.jpg"
+         }, {
+            "name" : "material.occlusionMap.url",
+            "value" : "./assets/textures/woodbar/occlusion.jpg"
+         } ]
+      }, {
+         "type" : "object",
+         "name" : "wood-bar-creation",
+         "Param" : [ {
+            "name" : "material.type",
+            "value" : "PBRMetallicRoughness"
+         }, {
+            "name" : "material.map.creation",
+            "value" : "wood"
+         } ]
+      } ],
+      "Exec" : [ ]
+   } ]
+}

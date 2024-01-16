@@ -1,0 +1,11 @@
+Model Information:
+* title:	Flat roof, diagonal supports
+* source:	https://sketchfab.com/3d-models/flat-roof-diagonal-supports-b3be3a6474c149d1a85ce970245d4995
+* author:	MAJO_EIENDOM (https://sketchfab.com/MAJO_EIENDOM)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Flat roof, diagonal supports" (https://sketchfab.com/3d-models/flat-roof-diagonal-supports-b3be3a6474c149d1a85ce970245d4995) by MAJO_EIENDOM (https://sketchfab.com/MAJO_EIENDOM) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

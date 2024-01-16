@@ -1,0 +1,502 @@
+{
+   "id" : "template-room",
+   "Process" : [ {
+      "id" : "template-room",
+      "type" : "3d",
+      "Scene" : [{
+			"Param": [
+				{
+					"name": "dimension",
+					"value": "7;0.4;7",
+					"used": false
+				},
+				{
+					"name": "material.diffuseMap.url",
+					"value": "./assets/textures/substance_2.jpg",
+					"used": false
+				},
+				{
+					"name": "shadow.receive",
+					"value": "true",
+					"used": false
+				}
+			],
+			"Action": [],
+			"Scene": [],
+			"Path": [],
+			"Variable": [],
+			"name": "ground",
+			"type": "object",
+			"create": "floor"
+		},
+		{
+			"Param": [
+				{
+					"name": "texture.url",
+					"value": "./assets/environment/country.env",
+					"used": false
+				},
+				{
+					"name": "material.type",
+					"value": "standard",
+					"active": null,
+					"used": false
+				}
+			],
+			"Action": [],
+			"Scene": [],
+			"Path": [],
+			"Variable": [],
+			"name": "sky",
+			"type": "object",
+			"create": "skybox"
+		},
+		{
+			"Param": [
+				{
+					"name": "direction",
+					"value": "0;1;0",
+					"used": false
+				},
+				{
+					"name": "diffuse",
+					"value": "1;1;1",
+					"used": false
+				},
+				{
+					"name": "intensity",
+					"value": "1.0",
+					"used": false
+				},
+				{
+					"name": "material.type",
+					"value": "standard",
+					"active": null,
+					"used": false
+				}
+			],
+			"Action": [],
+			"Scene": [],
+			"Path": [],
+			"Variable": [],
+			"name": "light",
+			"type": "object",
+			"create": "hemisphericLight",
+			"active": "true"
+		},
+		{
+			"Param": [
+				{
+					"name": "filename",
+					"value": "column-helice.obj",
+					"active": "true",
+					"used": true
+				},
+				{
+					"name": "url",
+					"value": "account/account_1/object/gallery/",
+					"active": "true",
+					"used": true
+				},
+				{
+					"name": "scale",
+					"value": "3;3;3",
+					"active": "true",
+					"used": false
+				},
+				{
+					"name": "name",
+					"value": "column-max.obj",
+					"active": null,
+					"used": false
+				},
+				{
+					"name": "reference",
+					"value": "material.metallic-1",
+					"active": null,
+					"used": false
+				}
+			],
+			"Action": [],
+			"Scene": [],
+			"Path": [],
+			"Variable": [],
+			"name": "column2",
+			"type": "merge",
+			"create": ""
+		},
+		{
+			"Param": [
+				{
+					"name": "pos",
+					"value": "7;2;3.5",
+					"used": false
+				},
+				{
+					"name": "target",
+					"value": "3.5;1;3.5",
+					"used": false
+				},
+				{
+					"name": "fov",
+					"value": "60",
+					"used": false
+				},
+				{
+					"name": "speed",
+					"value": "0.15",
+					"used": false
+				},
+				{
+					"name": "inertia",
+					"value": "0.9",
+					"used": false
+				},
+				{
+					"name": "angularSensibility",
+					"value": "3000",
+					"used": false
+				},
+				{
+					"name": "current",
+					"value": "true",
+					"used": false
+				},
+				{
+					"name": "material.type",
+					"value": "standard",
+					"active": null,
+					"used": false
+				}
+			],
+			"Action": [],
+			"Scene": [],
+			"Path": [],
+			"Variable": [],
+			"name": "camera",
+			"type": "camera",
+			"create": "universal"
+		},
+		{
+			"Param": [
+				{
+					"name": "pos",
+					"value": "1;0;5",
+					"used": true
+				},
+				{
+					"name": "local.scale",
+					"value": "0.1;3.0;3.5",
+					"used": false
+				},
+				{
+					"name": "local.pos",
+					"value": "vector(0, $scaleY/2, $scaleZ/2)",
+					"active": "true",
+					"used": false
+				},
+				{
+					"name": "material.type",
+					"value": "standard",
+					"active": null,
+					"used": false
+				},
+				{
+					"name": "rot.y",
+					"value": "-90",
+					"active": null,
+					"used": true
+				}
+			],
+			"Action": [],
+			"Scene": [
+				{
+					"Param": [
+						{
+							"name": "pos",
+							"value": "vector(0, -$scaleY/2, -$scaleZ/2)"
+						},
+						{
+							"name": "scale",
+							"value": "vector(0.2, $scaleY, 0.2)",
+							"active": null
+						},
+						{
+							"name": "filename",
+							"value": "column-helice.obj",
+							"active": null,
+							"used": true
+						},
+						{
+							"name": "url",
+							"value": "account/account_1/object/gallery/",
+							"active": null,
+							"used": true
+						},
+						{
+							"name": "reference",
+							"value": "material.metallic-1",
+							"active": null
+						}
+					],
+					"Action": [],
+					"Scene": [],
+					"Path": [],
+					"Variable": [],
+					"name": "col1",
+					"type": "object",
+					"create": "merge"
+				},
+				{
+					"Param": [
+						{
+							"name": "pos",
+							"value": "vector(0, -$scaleY/2, $scaleZ/2)"
+						},
+						{
+							"name": "scale",
+							"value": "vector(0.2, $scaleY, 0.2)",
+							"active": null
+						},
+						{
+							"name": "filename",
+							"value": "column-helice.obj",
+							"active": null,
+							"used": true
+						},
+						{
+							"name": "url",
+							"value": "account/account_1/object/gallery/",
+							"active": null,
+							"used": true
+						},
+						{
+							"name": "reference",
+							"value": "material.metallic-1",
+							"active": null
+						}
+					],
+					"Action": [],
+					"Scene": [],
+					"Path": [],
+					"Variable": [],
+					"name": "col2",
+					"type": "object",
+					"create": "merge"
+				},
+				{
+					"Param": [
+						{
+							"name": "pos",
+							"value": "vector(0, $scaleY/2-0.5, -$scaleZ/2)"
+						},
+						{
+							"name": "scale",
+							"value": "0.1;0.1;0.1",
+							"active": null
+						},
+						{
+							"name": "reference",
+							"value": "material.metallic-1",
+							"active": null
+						}
+					],
+					"Action": [],
+					"Scene": [],
+					"Path": [],
+					"Variable": [],
+					"name": "sphere1",
+					"type": "object",
+					"create": "sphere"
+				},
+				{
+					"Param": [
+						{
+							"name": "pos",
+							"value": "vector(0, $scaleY/2-0.5, $scaleZ/2)"
+						},
+						{
+							"name": "scale",
+							"value": "0.1;0.1;0.1",
+							"active": null
+						},
+						{
+							"name": "reference",
+							"value": "material.metallic-1",
+							"active": null
+						}
+					],
+					"Action": [],
+					"Scene": [],
+					"Path": [],
+					"Variable": [],
+					"name": "sphere2",
+					"type": "object",
+					"create": "sphere"
+				},
+				{
+					"Param": [
+						{
+							"name": "begin",
+							"value": "vector(0, $scaleY/2-0.5, -$scaleZ/2)",
+							"used": true
+						},
+						{
+							"name": "end",
+							"value": "vector(0, $scaleY/2-0.5, $scaleZ/2)",
+							"used": true
+						},
+						{
+							"name": "pattern",
+							"value": "bar",
+							"active": null,
+							"used": true
+						},
+						{
+							"name": "radius",
+							"value": "0.02",
+							"active": null
+						},
+						{
+							"name": "reference",
+							"value": "material.metallic-1",
+							"active": null
+						}
+					],
+					"Action": [],
+					"Scene": [],
+					"Path": [],
+					"Variable": [],
+					"name": "bar1",
+					"type": "object",
+					"create": "cylinder"
+				},
+				{
+					"Param": [
+						{
+							"name": "pos",
+							"value": "vector(0, 0.5-$scaleY/2, -$scaleZ/2)"
+						},
+						{
+							"name": "scale",
+							"value": "0.1;0.1;0.1",
+							"active": null
+						},
+						{
+							"name": "reference",
+							"value": "material.metallic-1",
+							"active": null
+						}
+					],
+					"Action": [],
+					"Scene": [],
+					"Path": [],
+					"Variable": [],
+					"name": "sphere11",
+					"type": "object",
+					"create": "sphere"
+				},
+				{
+					"Param": [
+						{
+							"name": "pos",
+							"value": "vector(0, 0.5-$scaleY/2, $scaleZ/2)"
+						},
+						{
+							"name": "scale",
+							"value": "0.1;0.1;0.1",
+							"active": null
+						},
+						{
+							"name": "reference",
+							"value": "material.metallic-1",
+							"active": null
+						}
+					],
+					"Action": [],
+					"Scene": [],
+					"Path": [],
+					"Variable": [],
+					"name": "sphere21",
+					"type": "object",
+					"create": "sphere"
+				},
+				{
+					"Param": [
+						{
+							"name": "begin",
+							"value": "vector(0, 0.5-$scaleY/2, -$scaleZ/2)",
+							"used": true
+						},
+						{
+							"name": "end",
+							"value": "vector(0, 0.5-$scaleY/2, $scaleZ/2)",
+							"used": true
+						},
+						{
+							"name": "pattern",
+							"value": "bar",
+							"active": null,
+							"used": true
+						},
+						{
+							"name": "radius",
+							"value": "0.02",
+							"active": null
+						},
+						{
+							"name": "reference",
+							"value": "material.metallic-1",
+							"active": null
+						}
+					],
+					"Action": [],
+					"Scene": [],
+					"Path": [],
+					"Variable": [],
+					"name": "bar2",
+					"type": "object",
+					"create": "cylinder"
+				},
+				{
+					"Param": [
+						{
+							"name": "pos",
+							"value": "0;0;0"
+						},
+						{
+							"name": "scale",
+							"value": "vector(0.01, $scaleY-1, $scaleZ-0.5)",
+							"active": null,
+							"used": false
+						},
+						{
+							"name": "material.diffuseColor",
+							"value": "0.4;0.4;0.4",
+							"active": null,
+							"used": true
+						},
+						{
+							"name": "material.type",
+							"value": "standard",
+							"active": null
+						}
+					],
+					"Action": [],
+					"Scene": [],
+					"Path": [],
+					"Variable": [],
+					"name": "background",
+					"type": "object",
+					"create": "box"
+				}
+			],
+			"Path": [],
+			"Variable": [],
+			"name": "wall",
+			"type": "object",
+			"create": "composite"
+		} ],
+      "Exec" : [ ]
+   } ]
+}

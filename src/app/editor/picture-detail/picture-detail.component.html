@@ -1,0 +1,39 @@
+<div id="picture-detail" [style]="style">
+	<div class="col-lg-8 col-md-8 col-sm-8">
+		<div class="col-lg-12 col-md-12 col-sm-12">
+			<div class="col-lg-4 col-md-4 col-sm-4" style="padding-top: 16px;">
+				<a class="btn btn-round btn-theme04" (click)="close()"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;back to scene</a>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4" style="padding-left: 0px; padding-top:16px; padding-bottom:16px">
+				<div class="col-lg-6 col-md-6 col-sm-6"><a class="btn btn-round btn-default" (click)="prev()"><i class="fa fa-chevron-left"></i>&nbsp;&nbsp;prev</a></div>
+				<div class="col-lg-6 col-md-6 col-sm-6"><a class="btn btn-round btn-default" (click)="next()">next&nbsp;&nbsp;<i class="fa fa-chevron-right"></i></a></div>
+			</div>
+	  		<div class="col-lg-4 col-md-4 col-sm-4" style="text-align: right; padding-top: 22px; font-size: 16px">{{indexLabel}}</div>
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12">
+			<div class="img-center" [ngStyle]="{'background-image': 'url('+ pictureUrl +')'}"></div>
+		</div>
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-4" style="background-color: #212121; font-size:12px">
+	    <a style="margin-top: 8px; float:right; font-size: 14px" (click)="close()"><i class="fa fa-times"></i></a>
+		<div style="padding-top: 32px;">
+			<input type="text" class="form-control" style="font-size:12px" placeholder="title" [(ngModel)]="title" (ngModelChange)="updateModel(false)">
+		</div>
+		<div style="padding-top:8px; font-size:14px">Description:</div>
+		<div style="padding-top: 4px;">
+			<textarea class="form-control" name="message" id="contact-message" style="font-size:12px" rows="8" data-rule="required" [(ngModel)]="description" (ngModelChange)="updateModel(false)"></textarea>
+		</div>
+		<div style="padding-top: 16px;">
+			<input type="text" class="form-control" style="font-size:12px" placeholder="tag" [(ngModel)]="tag" (ngModelChange)="updateModel(false)">
+		</div>
+		<div style="padding-top:8px; font-size:14px">Hyperlink:</div>
+		<div>
+			<div class="col-lg-6 col-md-6 col-sm-6" style="padding: 0px;">
+				<input type="text" class="form-control" style="font-size:12px" placeholder="label" [(ngModel)]="linkLabel" (ngModelChange)="updateModel(false)">
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6" style="padding-left: 8px; padding-right: 0px">
+				<input type="text" class="form-control" style="font-size:12px" placeholder="url" [(ngModel)]="linkUrl" (ngModelChange)="updateModel(false)">
+			</div>
+		</div>
+	</div>
+</div>

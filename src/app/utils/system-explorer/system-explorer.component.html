@@ -1,0 +1,46 @@
+<!-- scene viewer -->
+<div class="camera-nav" style="font-size: 22px; width:40px">
+	<div style="padding-top: 6px; padding-left: 8px"><a (click)="showEdit()"><i class="fa fa-edit"></i></a></div>
+</div>
+
+<div class="asset-info-title" [style]="treeExplorerToolStyle">
+	<div style="padding-top: 6px; padding-left:12px">
+	<a (click)="tree.treeModel.expandAll()">Expand All</a>
+	&nbsp;|&nbsp;<a (click)="system.visible(false, false)">Hide Unselected</a>
+	&nbsp;|&nbsp;<a (click)="system.visible(true, true)">Show All</a>
+	</div>
+</div>
+
+<app-engine #engineComponent (event)="engineComponentEventHandler($event)"></app-engine>
+
+<div id="system-eplorer-tool" [style]="style">
+
+	<a style="margin: 8px; float:right; font-size: 16px" (click)="hide()"><i class="fa fa-times"></i></a>
+
+	<!-- command input -->
+	<app-command #commandComponent (event)="commandComponentEventHandler($event)"></app-command>
+
+	<!-- tree explorer -->
+	<div class="col-lg-12 col-md-12 col-sm-12" [style]="treeExplorerStyle">
+		<div style="height:500px; background-color: #dddddd; color:black; margin:12px">
+			<tree-root #tree [focused]="true" [nodes]="nodes" [options]="options" 
+				(initialized)="treeInitializedEventHandler($event)"
+				(focus)="treeFocusEventHandler($event)"></tree-root>
+		</div>
+		<div style="padding-top:12px; padding-left:12px">
+			<div style="color:#fff; font-size:14px; padding-bottom: 4px">{{name}}</div>
+			<div class="col-lg-6 col-md-6 col-sm-6">
+				<div>Local</div><div style="color:#fff; font-size:14px; padding-bottom: 4px">{{formatVector(local)}}</div>
+				<div>Global</div><div style="color:#fff; font-size:14px; padding-bottom: 4px">{{formatVector(global)}}</div>
+				<div>Min Global</div><div style="color:#fff; font-size:14px; padding-bottom: 4px">{{formatVector(minGlobal)}}</div>
+				<div>Max Global</div><div style="color:#fff; font-size:14px; padding-bottom: 4px">{{formatVector(maxGlobal)}}</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6">
+				<div>Rotation</div><div style="color:#fff; font-size:14px; padding-bottom: 4px">{{formatVector(rotation)}}</div>
+				<div>Scaling</div><div style="color:#fff; font-size:14px; padding-bottom: 4px">{{formatVector(scaling)}}</div>
+				<div>Min Local</div><div style="color:#fff; font-size:14px; padding-bottom: 4px">{{formatVector(minLocal)}}</div>
+				<div>Max Local</div><div style="color:#fff; font-size:14px; padding-bottom: 4px">{{formatVector(maxLocal)}}</div>
+			</div>
+		</div>
+	<!-- end tree explorer -->
+</div>

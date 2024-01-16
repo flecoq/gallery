@@ -1,0 +1,64 @@
+<div id="uploader" class="modal fade modeless" style="overflow: hidden;" cdkDrag>
+  <div class="modal-dialog" role="document" style="width: 640px; margin: auto">
+    <div class="modal-content">
+       <div class="modal-header" style="height:26px; padding-top:4px" cdkDragHandle>
+           <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-dismiss="modal" (click)="close()">&times;</button>
+           <h4 class="modal-title" style="font-size: 14px;">Asset Upload</h4>
+      </div>
+      <div class="modal-body" style="height: 420px"
+			     fileDrop
+			     [accept]="supportedExtensions"
+			     (fileDrop)="onFileChange($event)">
+		<div class="col-lg-12 col-md-12 col-sm-12 drop-box">
+			<div class="col-lg-12 col-md-12 col-sm-12" style="text-align: center; font-size:40px; color: #aaa"><i class="fa fa-upload"></i></div>
+			<div class="col-lg-12 col-md-12 col-sm-12" style="text-align: center; font-weight: 600; font-size: 16px;">Drop your files here</div>
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12" style="padding-top: 12px; padding-bottom: 4px">
+				<div class="col-lg-4 col-md-4 col-sm-4"></div>
+				<div class="col-lg-4 col-md-4 col-sm-4" style="padding-left: 30px">
+					<label *ngIf="fileCounter != max"
+				      class="img-ul-upload img-ul-button">
+				      <span>SELECT FILES</span>
+				      <input
+				        type="file"
+				        [accept]="supportedExtensions"
+				        [multiple]="max > 1"
+				        (change)="onFileChange(input.files)"
+				        #input>
+				    </label>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4"></div>
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12" style="text-align: center; padding-top:12px; color: #aaa; font-size:14px;" *ngIf="showFileTooLargeMessage">{{fileTooLargeMessage}}</div>
+		<div class="col-lg-12 col-md-12 col-sm-12" style="font-family: arial; color: #bbb" *ngIf="fileCounter == 0">
+			<div style="padding-bottom: 3px; padding-top: 20px"><i class="fa fa-arrow-circle-right"></i>&nbsp;&nbsp;File format:</div>
+			<ul>
+				<li style="padding-bottom: 4px"><i class="fa fa-caret-right"></i>&nbsp;Picture: jpeg, png, etc.</li>
+				<li style="padding-bottom: 4px"><i class="fa fa-caret-right"></i>&nbsp;Object: gltf, bin, obj, mlt</li>
+				<li style="padding-bottom: 4px"><i class="fa fa-caret-right"></i>&nbsp;Video: mp4</li>
+				<li><i class="fa fa-caret-right"></i>&nbsp;Sound: mp3</li>
+			</ul>
+			<p><i class="fa fa-arrow-circle-right"></i>&nbsp;&nbsp;Max file size: 10 Mo.</p>
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12" [style]="containerCss" *ngIf="fileCounter > 0">
+			<div class="img-ul-image"
+				*ngFor="let file of files" [ngStyle]="{'background-image': 'url('+ file.src +')'}">
+			 	<div *ngIf="file.pending" class="img-ul-loading-overlay">
+			        <div class="img-ul-spinning-circle"></div>
+			   	</div>
+				<div *ngIf="!file.pending" style="float: right">
+			        <span style="color: #0d0; font-size:32px"><i class="fa fa-check"></i></span>
+		      	</div>
+			</div>
+		</div>
+      </div>
+      <div class="modal-footer">
+	      <div class="col-lg-12 col-md-12 col-sm-12">
+			<div class="col-lg-8 col-md-8 col-sm-8" style="padding-top: 6px; padding-left: 0px; text-align:left; font-size: 14px; color: #00abde">{{message}}</div>
+      		<button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Cancel</button>
+       		<button type="button" [ngClass]="confirmCss" data-dismiss="modal" (click)="confirm()">Add Asset</button>
+	      </div>
+      </div>
+    </div>
+  </div>
+</div>
